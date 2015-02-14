@@ -7,6 +7,7 @@
 //
 
 #import "CatalogParser.h"
+#import "Catalog.h"
 
 @implementation CatalogParser
 
@@ -14,7 +15,8 @@
   NSString *filePath = [[NSBundle mainBundle] pathForResource:@"catalog" ofType:@"json"];
   NSLog(@"filePath is %@", filePath);
   NSData *data = [NSData dataWithContentsOfFile:filePath];
-  NSLog(@"data is %@", data);
+  NSString *jsonContent = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+  NSLog(@"data is %@", jsonContent);
   NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
   NSLog(@"json count is %lu", [json count]);
 }
