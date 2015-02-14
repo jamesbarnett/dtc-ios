@@ -18,6 +18,7 @@
 		25B4D7A71A8EB6CC003A8773 /* Catalog.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4D7A11A8EB6CC003A8773 /* Catalog.m */; };
 		25B4D7A81A8EB6CC003A8773 /* Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4D7A31A8EB6CC003A8773 /* Collection.m */; };
 		25B4D7A91A8EB6CC003A8773 /* Piece.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4D7A51A8EB6CC003A8773 /* Piece.m */; };
+		25B4D7AC1A8EE609003A8773 /* CatalogParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4D7AB1A8EE609003A8773 /* CatalogParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		25B4D7A31A8EB6CC003A8773 /* Collection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collection.m; sourceTree = "<group>"; };
 		25B4D7A41A8EB6CC003A8773 /* Piece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piece.h; sourceTree = "<group>"; };
 		25B4D7A51A8EB6CC003A8773 /* Piece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Piece.m; sourceTree = "<group>"; };
+		25B4D7AA1A8EE609003A8773 /* CatalogParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogParser.h; sourceTree = "<group>"; };
+		25B4D7AB1A8EE609003A8773 /* CatalogParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 				25B4D7861A8EB533003A8773 /* Images.xcassets */,
 				25B4D7881A8EB533003A8773 /* LaunchScreen.xib */,
 				25B4D7791A8EB533003A8773 /* Supporting Files */,
+				25B4D7AA1A8EE609003A8773 /* CatalogParser.h */,
+				25B4D7AB1A8EE609003A8773 /* CatalogParser.m */,
 			);
 			path = "dtc-ios";
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25B4D7A91A8EB6CC003A8773 /* Piece.m in Sources */,
+				25B4D7AC1A8EE609003A8773 /* CatalogParser.m in Sources */,
 				25B4D7821A8EB533003A8773 /* ViewController.m in Sources */,
 				25B4D7A81A8EB6CC003A8773 /* Collection.m in Sources */,
 				25B4D77F1A8EB533003A8773 /* AppDelegate.m in Sources */,
@@ -436,6 +442,7 @@
 				25B4D79B1A8EB533003A8773 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		25B4D79C1A8EB533003A8773 /* Build configuration list for PBXNativeTarget "dtc-iosTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +451,7 @@
 				25B4D79E1A8EB533003A8773 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
