@@ -10,4 +10,19 @@
 
 @implementation Piece
 
++(Piece*)fromJSON: (NSDictionary*)json {
+  Piece* piece = [Piece new];
+
+  piece._title = [json objectForKey:@"title"];
+  piece._description = [json objectForKey:@"description"];
+  piece._image = [json objectForKey:@"image"];
+
+  return piece;
+}
+
+-(NSString*)toString {
+  return [NSString stringWithFormat:@"Piece { title: %@, description: %@, image: %@",
+          self._title, self._description, self._image];
+}
+
 @end

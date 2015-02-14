@@ -11,6 +11,6 @@
 
 @interface CatalogParser : NSObject
 
--(void) parse;
+-(Catalog*) parse;
 
 @end

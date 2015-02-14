@@ -19,7 +19,7 @@
   [super viewDidLoad];
   CatalogParser* catalogParser = [CatalogParser new];
   
-  [catalogParser parse];
+  NSLog(@"Catalog parsed! %@", [[catalogParser parse] toString]);
 }
 
 - (void)didReceiveMemoryWarning {

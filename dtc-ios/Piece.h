@@ -14,4 +14,7 @@
 @property NSString* _description;
 @property NSString* _image;
 
++(Piece*)fromJSON: (NSDictionary*)json;
+-(NSString*)toString;
+
 @end
