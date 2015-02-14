@@ -21,7 +21,7 @@
 }
 
 -(NSString*)toString {
-  return [NSString stringWithFormat:@"Piece { title: %@, description: %@, image: %@",
+  return [NSString stringWithFormat:@"Piece { title: %@, description: %@, image: %@ }",
           self._title, self._description, self._image];
 }
 
