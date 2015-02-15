@@ -19,7 +19,7 @@
   return self;
 }
 
-+(Catalog*) fromJSON: (NSMutableDictionary*)json {
++ (Catalog*)fromJSON:(NSMutableDictionary*)json {
   Catalog* catalog = [Catalog new];
 
   catalog._designer = [json objectForKey:@"designer"];
@@ -31,7 +31,7 @@
   return catalog;
 }
 
--(NSString*)toString {
+- (NSString*)toString {
   [NSString stringWithFormat:@"Catalog { designer: %@ }", self._designer];
 
   NSMutableString* buffer = [NSMutableString new];
@@ -48,4 +48,5 @@
 
   return buffer;
 }
+
 @end

@@ -11,7 +11,7 @@
 
 @implementation Collection
 
--(id)init {
+- (id)init {
   if (self = [super init]) {
     self._pieces = [NSMutableArray new];
   }
@@ -19,7 +19,7 @@
   return self;
 }
 
-+(Collection*) fromJSON: (NSDictionary*)json {
++ (Collection*)fromJSON:(NSDictionary*)json {
   Collection* collection = [Collection new];
 
   collection._season = [json objectForKey:@"season"];
@@ -32,7 +32,7 @@
   return collection;
 }
 
--(NSString*)toString {
+- (NSString*)toString {
 
   [NSString stringWithFormat:@"Collection { season: %@ }", self._season];
 

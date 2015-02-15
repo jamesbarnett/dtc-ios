@@ -11,12 +11,12 @@
 
 @implementation CatalogParser
 
--(Catalog*) parse {
-  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"catalog" ofType:@"json"];
-  NSData *data = [NSData dataWithContentsOfFile:filePath];
-  NSMutableDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+- (Catalog*)parse {
+  NSString* filePath = [[NSBundle mainBundle] pathForResource:@"catalog" ofType:@"json"];
+  NSData* data = [NSData dataWithContentsOfFile:filePath];
+  NSMutableDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
 
-  return [Catalog fromJSON: json];
+  return [Catalog fromJSON:json];
 }
 
 @end

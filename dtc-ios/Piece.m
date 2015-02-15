@@ -10,7 +10,7 @@
 
 @implementation Piece
 
-+(Piece*)fromJSON: (NSDictionary*)json {
++ (Piece*)fromJSON:(NSDictionary*)json {
   Piece* piece = [Piece new];
 
   piece._title = [json objectForKey:@"title"];
@@ -20,7 +20,7 @@
   return piece;
 }
 
--(NSString*)toString {
+- (NSString*)toString {
   return [NSString stringWithFormat:@"Piece { title: %@, description: %@, image: %@ }",
           self._title, self._description, self._image];
 }

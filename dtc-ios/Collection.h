@@ -14,7 +14,8 @@
 @property NSString* _description;
 @property NSString* _image;
 @property NSMutableArray* _pieces;
-+(Collection*) fromJSON: (NSDictionary*) json;
--(NSString*)toString;
+
++ (Collection*)fromJSON:(NSDictionary*)json;
+- (NSString*)toString;
 
 @end

@@ -13,7 +13,7 @@
 @property NSString* _designer;
 @property NSMutableArray* _collections;
 
-+(Catalog*)fromJSON: (NSMutableDictionary*) json;
++(Catalog*)fromJSON:(NSMutableDictionary*)json;
 -(NSString*)toString;
 
 @end
