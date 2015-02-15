@@ -32,11 +32,9 @@
 }
 
 - (NSString*)toString {
-  [NSString stringWithFormat:@"Catalog { designer: %@ }", self._designer];
-
   NSMutableString* buffer = [NSMutableString new];
 
-  [buffer appendFormat:@"Catalog { designed: %@ ", self._designer];
+  [buffer appendFormat:@"Catalog { designer: %@ ", self._designer];
 
   [buffer appendString:@" Collections ["];
 
