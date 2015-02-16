@@ -7,6 +7,7 @@
 //
 
 #import "CatalogCollectionsViewController.h"
+#import "CatalogParser.h"
 
 @interface CatalogCollectionsViewController ()
 
@@ -17,15 +18,15 @@
 static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
+
+  // self.clearsSelectionOnViewWillAppear = NO;
+
+  // Register cell classes
+  [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+
+  CatalogParser* parser = [CatalogParser new];
+  self._catalog = [parser parse];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,22 +47,20 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete method implementation -- Return the number of sections
-    return 1;
+  return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete method implementation -- Return the number of items in the section
-    return 0;
+  return [[self._catalog _collections] count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell
-    
-    return cell;
+  UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+
+  // Configure the cell
+
+  return cell;
 }
 
 #pragma mark <UICollectionViewDelegate>
@@ -76,7 +75,7 @@ static NSString * const reuseIdentifier = @"Cell";
 /*
 // Uncomment this method to specify if the specified item should be selected
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
+  return YES;
 }
 */
 
@@ -91,7 +90,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
+
 }
 */
 

@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-#include "CatalogCollectionsViewLayout.h"
+#import "CatalogCollectionsViewLayout.h"
+#import "Catalog.h"
 
 @interface CatalogCollectionsViewController : UICollectionViewController
 
 @property (nonatomic, weak) IBOutlet CataglogCollectionsViewLayout* collectionLayout;
+@property (nonatomic)  Catalog* _catalog;
 
 @end
