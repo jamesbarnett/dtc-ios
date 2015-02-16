@@ -20,6 +20,7 @@
 		25B4D7AC1A8EE609003A8773 /* CatalogParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4D7AB1A8EE609003A8773 /* CatalogParser.m */; };
 		25B4D7B21A90C3DC003A8773 /* CatalogCollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4D7B11A90C3DC003A8773 /* CatalogCollectionsViewController.m */; };
 		25B4D7B81A9167F3003A8773 /* CatalogCollectionsViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4D7B71A9167F3003A8773 /* CatalogCollectionsViewLayout.m */; };
+		25B4D7BE1A918179003A8773 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4D7BD1A918179003A8773 /* CollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		25B4D7B11A90C3DC003A8773 /* CatalogCollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogCollectionsViewController.m; sourceTree = "<group>"; };
 		25B4D7B61A9167F3003A8773 /* CatalogCollectionsViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogCollectionsViewLayout.h; sourceTree = "<group>"; };
 		25B4D7B71A9167F3003A8773 /* CatalogCollectionsViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogCollectionsViewLayout.m; sourceTree = "<group>"; };
+		25B4D7BC1A918179003A8773 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		25B4D7BD1A918179003A8773 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				25B4D7AB1A8EE609003A8773 /* CatalogParser.m */,
 				25B4D7B01A90C3DC003A8773 /* CatalogCollectionsViewController.h */,
 				25B4D7B11A90C3DC003A8773 /* CatalogCollectionsViewController.m */,
+				25B4D7BC1A918179003A8773 /* CollectionViewCell.h */,
+				25B4D7BD1A918179003A8773 /* CollectionViewCell.m */,
 			);
 			path = "dtc-ios";
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 				25B4D7A91A8EB6CC003A8773 /* Piece.m in Sources */,
 				25B4D7AC1A8EE609003A8773 /* CatalogParser.m in Sources */,
 				25B4D7A81A8EB6CC003A8773 /* Collection.m in Sources */,
+				25B4D7BE1A918179003A8773 /* CollectionViewCell.m in Sources */,
 				25B4D7B21A90C3DC003A8773 /* CatalogCollectionsViewController.m in Sources */,
 				25B4D7B81A9167F3003A8773 /* CatalogCollectionsViewLayout.m in Sources */,
 				25B4D77F1A8EB533003A8773 /* AppDelegate.m in Sources */,
