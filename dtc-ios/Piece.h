@@ -10,9 +10,9 @@
 
 @interface Piece : NSObject
 
-@property NSString* _title;
-@property NSString* _description;
-@property NSString* _image;
+@property (nonatomic) NSString* _title;
+@property (nonatomic) NSString* _description;
+@property (nonatomic) NSString* _image;
 
 +(Piece*)fromJSON:(NSDictionary*)json;
 -(NSString*)toString;

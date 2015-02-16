@@ -10,8 +10,8 @@
 
 @interface Catalog : NSObject
 
-@property NSString* _designer;
-@property NSMutableArray* _collections;
+@property (atomic) NSString* _designer;
+@property (atomic) NSMutableArray* _collections;
 
 +(Catalog*)fromJSON:(NSMutableDictionary*)json;
 -(NSString*)toString;

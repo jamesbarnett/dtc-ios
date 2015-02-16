@@ -10,10 +10,10 @@
 
 @interface Collection : NSObject
 
-@property NSString* _season;
-@property NSString* _description;
-@property NSString* _image;
-@property NSMutableArray* _pieces;
+@property (atomic) NSString* _season;
+@property (atomic) NSString* _description;
+@property (atomic) NSString* _image;
+@property (atomic) NSMutableArray* _pieces;
 
 + (Collection*)fromJSON:(NSDictionary*)json;
 - (NSString*)toString;
