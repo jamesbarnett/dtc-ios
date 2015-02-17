@@ -1,5 +1,5 @@
 //
-//  CataglogCollectionsViewLayout.h
+//  CatalogCollectionsViewLayout.h
 //  dtc-ios
 //
 //  Created by James Barnett on 2/15/15.
@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CataglogCollectionsViewLayout : UICollectionViewLayout
+@interface CatalogCollectionsViewLayout : UICollectionViewLayout
+
+@property (nonatomic) UIEdgeInsets itemInsets;
+@property (nonatomic) CGSize itemSize;
+@property (nonatomic) CGFloat interItemSpacingY;
+@property (nonatomic) NSInteger numberOfColumns;
 
 @end

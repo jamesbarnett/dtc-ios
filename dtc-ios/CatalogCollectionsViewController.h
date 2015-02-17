@@ -13,7 +13,7 @@
 
 @interface CatalogCollectionsViewController : UICollectionViewController
 
-@property (nonatomic, weak) IBOutlet CataglogCollectionsViewLayout* collectionLayout;
-@property (nonatomic)  Catalog* _catalog;
+@property (nonatomic, weak) IBOutlet CatalogCollectionsViewLayout* collectionLayout;
+@property (nonatomic) Catalog* _catalog;
 
 @end
