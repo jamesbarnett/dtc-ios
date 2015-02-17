@@ -41,7 +41,7 @@ static NSString* const CatalogCollectionsCellKind = @"CollectionCell";
   self.itemInsets = UIEdgeInsetsMake(22.0f, 22.0f, 13.0f, 22.0f);
   self.itemSize = CGSizeMake(125.0f, 125.0f);
   self.interItemSpacingY = 12.0f;
-  self.numberOfColumns = 2;
+  self.numberOfColumns = 1;
 }
 
 - (void)prepareLayout {
@@ -69,7 +69,7 @@ static NSString* const CatalogCollectionsCellKind = @"CollectionCell";
   self.layoutInfo = newLayoutInfo;
 }
 
--(CGRect)frameForCollectionAtIndexPath:(NSIndexPath*)indexPath {
+- (CGRect)frameForCollectionAtIndexPath:(NSIndexPath*)indexPath {
   NSInteger row = indexPath.section / self.numberOfColumns;
   NSInteger column = indexPath.section % self.numberOfColumns;
 
