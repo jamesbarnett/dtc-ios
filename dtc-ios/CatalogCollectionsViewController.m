@@ -8,6 +8,10 @@
 
 #import "CatalogCollectionsViewController.h"
 #import "CatalogParser.h"
+#import "CatalogCollectionsViewLayout.h"
+#import "CollectionViewCell.h"
+
+static NSString* const CollectionCellIdentifier = @"CollectionCell";
 
 @interface CatalogCollectionsViewController ()
 
@@ -15,23 +19,22 @@
 
 @implementation CatalogCollectionsViewController
 
-static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  // self.clearsSelectionOnViewWillAppear = NO;
+  self.collectionView.backgroundColor = [UIColor colorWithWhite:0.25f alpha:1.0f];
 
   // Register cell classes
-  [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+  [self.collectionView registerClass:[CollectionViewCell class]
+    forCellWithReuseIdentifier:CollectionCellIdentifier];
 
   CatalogParser* parser = [CatalogParser new];
   self._catalog = [parser parse];
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
 }
 
 /*
@@ -51,16 +54,19 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView
+    numberOfItemsInSection:(NSInteger)section {
   return [[self._catalog _collections] count];
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-  UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                                          cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
-  // Configure the cell
-
-  return cell;
+  CollectionViewCell* collectionCell =
+    [collectionView dequeueReusableCellWithReuseIdentifier:CollectionCellIdentifier
+      forIndexPath:indexPath];
+  
+  return collectionCell;
 }
 
 #pragma mark <UICollectionViewDelegate>

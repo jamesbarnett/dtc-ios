@@ -11,7 +11,8 @@
 #import "CatalogCollectionsViewLayout.h"
 #import "Catalog.h"
 
-@interface CatalogCollectionsViewController : UICollectionViewController
+@interface CatalogCollectionsViewController : UICollectionViewController <UICollectionViewDataSource,
+                                              UICollectionViewDelegate>
 
 @property (nonatomic, weak) IBOutlet CatalogCollectionsViewLayout* collectionLayout;
 @property (nonatomic) Catalog* _catalog;

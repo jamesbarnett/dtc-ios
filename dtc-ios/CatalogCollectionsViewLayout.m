@@ -106,4 +106,21 @@ static NSString* const CatalogCollectionsCellKind = @"CollectionCell";
   return allAtttributes;
 }
 
+- (UICollectionViewLayoutAttributes*)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
+  return self.layoutInfo[CatalogCollectionsCellKind][indexPath];
+}
+
+- (CGSize)collectionViewContentSize {
+  NSInteger rowCount = [self.collectionView numberOfSections] / self.numberOfColumns;
+
+  // make sure we count another row if one is only partially filled
+  if ([self.collectionView numberOfSections] % self.numberOfColumns) rowCount++;
+
+  CGFloat height = self.itemInsets.top +
+                   rowCount * self.itemSize.height + (rowCount - 1) * self.interItemSpacingY +
+                   self.itemInsets.bottom;
+
+  return CGSizeMake(self.collectionView.bounds.size.width, height);
+}
+
 @end
