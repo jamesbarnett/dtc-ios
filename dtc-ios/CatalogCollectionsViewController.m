@@ -29,6 +29,7 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
   [self.collectionView registerClass:[CollectionViewCell class]
     forCellWithReuseIdentifier:CollectionCellIdentifier];
 
+  NSLog(@"viewDidLoad: wasn't a complete failure!");
   CatalogParser* parser = [CatalogParser new];
   self._catalog = [parser parse];
 }
@@ -49,7 +50,7 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
 
 #pragma mark <UICollectionViewDataSource>
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView {
   return 1;
 }
 
@@ -59,13 +60,14 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
   return [[self._catalog _collections] count];
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+- (UICollectionViewCell*)collectionView:(UICollectionView*)collectionView
                                           cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
   CollectionViewCell* collectionCell =
     [collectionView dequeueReusableCellWithReuseIdentifier:CollectionCellIdentifier
       forIndexPath:indexPath];
-  
+
+  NSLog(@"cellForItemAtIndexPath: %@", collectionCell.description);
   return collectionCell;
 }
 
