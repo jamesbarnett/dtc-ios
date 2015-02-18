@@ -29,7 +29,6 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
   [self.collectionView registerClass:[CollectionViewCell class]
     forCellWithReuseIdentifier:CollectionCellIdentifier];
 
-  NSLog(@"viewDidLoad: wasn't a complete failure!");
   CatalogParser* parser = [CatalogParser new];
   self._catalog = [parser parse];
 }
@@ -67,7 +66,6 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
     [collectionView dequeueReusableCellWithReuseIdentifier:CollectionCellIdentifier
       forIndexPath:indexPath];
 
-  NSLog(@"cellForItemAtIndexPath: %@", collectionCell.description);
   return collectionCell;
 }
 

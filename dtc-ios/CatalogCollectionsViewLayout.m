@@ -19,33 +19,28 @@ static NSString* const CatalogCollectionsCellKind = @"CollectionCell";
 @implementation CatalogCollectionsViewLayout
 
 - (id)init {
-  NSLog(@"CatalogCollectionsViewLayout#init was called!");
   self = [super init];
-
-  if (self) {
-    [self setup];
-  }
 
   return self;
 }
 
 - (id)initWithCoder:(NSCoder*)aDecoder {
   self = [super init];
-  if (self) {
-    [self setup];
-  }
 
   return self;
 }
 
-- (void)setup {
-  self.itemInsets = UIEdgeInsetsMake(22.0f, 22.0f, 13.0f, 22.0f);
-  self.itemSize = CGSizeMake(125.0f, 250.0f);
-  self.interItemSpacingY = 12.0f;
+- (void)setDimensions {
+  self.itemInsets = UIEdgeInsetsMake(4.0f, 4.0f, 4.0f, 4.0f);
+  self.itemSize = CGSizeMake(self.collectionView.bounds.size.width
+                             - self.itemInsets.left
+                             - self.itemInsets.right, 40.0f);
   self.numberOfColumns = 1;
 }
 
 - (void)prepareLayout {
+  [self setDimensions];
+
   NSMutableDictionary* newLayoutInfo = [NSMutableDictionary dictionary];
   NSMutableDictionary* cellLayoutInfo = [NSMutableDictionary dictionary];
 
@@ -71,25 +66,14 @@ static NSString* const CatalogCollectionsCellKind = @"CollectionCell";
 }
 
 - (CGRect)frameForCollectionAtIndexPath:(NSIndexPath*)indexPath {
-  NSInteger row = indexPath.section / self.numberOfColumns;
-  NSInteger column = indexPath.section % self.numberOfColumns;
-
-  CGFloat spacingX = self.collectionView.bounds.size.width -
-                     self.itemInsets.left -
-                     self.itemInsets.right -
-                     (self.numberOfColumns * self.itemSize.width);
-
-  if (self.numberOfColumns > 1) spacingX = spacingX / (self.numberOfColumns - 1);
+  int padding = (indexPath.item == 0) ? 2 * self.itemInsets.top : 0;
 
   CGFloat originX = self.itemInsets.left;
-  CGFloat originY = indexPath.item + self.itemInsets.top + self.itemSize.height;
-  //CGFloat originX = floorf(self.itemInsets.left + (self.itemSize.width + spacingX) * column);
-
-  /*CGFloat originY = floor(self.itemInsets.top +
-                          (self.itemSize.height + self.interItemSpacingY) * row);
-  */
-  NSLog(@"originY: item: %d, top: %f", indexPath.item, self.itemInsets.top);
-  NSLog(@"x,y,w,d: %f,%f,%f,%f", originX, originY, self.itemSize.width, self.itemSize.height);
+  CGFloat originY = self.itemInsets.top +
+    ((indexPath.item - 1)
+      * (padding
+         + self.itemSize.height
+         + self.itemInsets.bottom));
 
   return CGRectMake(originX, originY, self.itemSize.width, self.itemSize.height);
 }
@@ -118,8 +102,6 @@ static NSString* const CatalogCollectionsCellKind = @"CollectionCell";
 
 - (CGSize)collectionViewContentSize {
   NSInteger rowCount = [self.collectionView numberOfSections] / self.numberOfColumns;
-
-  NSLog(@"rowCount: %ld", rowCount);
 
   // make sure we count another row if one is only partially filled
   if ([self.collectionView numberOfSections] % self.numberOfColumns) rowCount++;
