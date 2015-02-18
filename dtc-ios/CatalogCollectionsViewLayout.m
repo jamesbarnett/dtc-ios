@@ -82,12 +82,13 @@ static NSString* const CatalogCollectionsCellKind = @"CollectionCell";
   if (self.numberOfColumns > 1) spacingX = spacingX / (self.numberOfColumns - 1);
 
   CGFloat originX = self.itemInsets.left;
-  CGFloat originY = indexPath.item + self.itemInsets.top * self.itemSize.height;
+  CGFloat originY = indexPath.item + self.itemInsets.top + self.itemSize.height;
   //CGFloat originX = floorf(self.itemInsets.left + (self.itemSize.width + spacingX) * column);
 
   /*CGFloat originY = floor(self.itemInsets.top +
                           (self.itemSize.height + self.interItemSpacingY) * row);
   */
+  NSLog(@"originY: item: %d, top: %f", indexPath.item, self.itemInsets.top);
   NSLog(@"x,y,w,d: %f,%f,%f,%f", originX, originY, self.itemSize.width, self.itemSize.height);
 
   return CGRectMake(originX, originY, self.itemSize.width, self.itemSize.height);
