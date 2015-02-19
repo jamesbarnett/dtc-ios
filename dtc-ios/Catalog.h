@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Collection.h"
 
 @interface Catalog : NSObject
 
@@ -15,5 +16,6 @@
 
 +(Catalog*)fromJSON:(NSMutableDictionary*)json;
 -(NSString*)toString;
+-(Collection*)collectionAt:(NSInteger)index;
 
 @end

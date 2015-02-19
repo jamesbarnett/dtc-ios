@@ -10,4 +10,6 @@
 
 @interface CollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, strong) IBOutlet UILabel* label;
+
 @end

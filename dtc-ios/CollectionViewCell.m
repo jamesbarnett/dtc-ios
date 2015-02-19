@@ -10,11 +10,15 @@
 
 @implementation CollectionViewCell
 
+@synthesize label;
+
 - (id)initWithFrame:(CGRect)frame {
+  NSLog(@"CollectionViewCell#initWithFrame");
   self = [super initWithFrame:frame];
 
   if (self) {
     self.backgroundColor = [UIColor colorWithWhite:0.85f alpha:1.0f];
+    self.label = [[UILabel alloc] initWithFrame:self.bounds];
   }
 
   return self;

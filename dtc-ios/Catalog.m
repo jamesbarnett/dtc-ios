@@ -47,4 +47,8 @@
   return buffer;
 }
 
+- (Collection*)collectionAt:(NSInteger)index {
+  return (Collection*)self._collections[index];
+}
+
 @end
