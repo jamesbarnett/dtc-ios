@@ -19,6 +19,10 @@
   return self;
 }
 
+- (Piece*)pieceAt:(NSInteger)index {
+  return (Piece*)self._pieces[index];
+}
+
 + (Collection*)fromJSON:(NSDictionary*)json {
   Collection* collection = [Collection new];
 

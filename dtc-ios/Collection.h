@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Piece.h"
 
 @interface Collection : NSObject
 
@@ -17,5 +18,6 @@
 
 + (Collection*)fromJSON:(NSDictionary*)json;
 - (NSString*)toString;
+-(Piece*)pieceAt:(NSInteger)index;
 
 @end

@@ -31,7 +31,8 @@ static NSString* const CatalogCollectionsCellKind = @"CollectionCell";
 }
 
 - (void)setDimensions {
-  self.itemInsets = UIEdgeInsetsMake(4.0f, 4.0f, 4.0f, 4.0f);
+  const float BORDER = 10.0f;
+  self.itemInsets = UIEdgeInsetsMake(BORDER, BORDER, BORDER, BORDER);
   self.itemSize = CGSizeMake(self.collectionView.bounds.size.width
                              - self.itemInsets.left
                              - self.itemInsets.right, 40.0f);
