@@ -67,9 +67,6 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
     [collectionView dequeueReusableCellWithReuseIdentifier:CollectionCellIdentifier
       forIndexPath:indexPath];
 
-  NSLog(@"Label: %@", collectionCell.label.description);
-  NSLog(@"Font: %@", collectionCell.label.font.description);
-  NSLog(@"season: %@", [self._catalog collectionAt:indexPath.row]._season);
   collectionCell.label.text = [self._catalog collectionAt:indexPath.row]._season;
 
   return collectionCell;
