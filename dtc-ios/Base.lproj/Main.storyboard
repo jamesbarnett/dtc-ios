@@ -24,6 +24,9 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="customSize" width="371" height="64"/>
+                                <connections>
+                                    <segue destination="xA8-km-Fm2" kind="showDetail" identifier="PieceViewSegue" id="wqL-4S-2mw"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -38,6 +41,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDN-Ze-2B6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1881" y="563"/>
+        </scene>
+        <!--Piece View Controller-->
+        <scene sceneID="e4P-tZ-g1M">
+            <objects>
+                <viewController id="xA8-km-Fm2" customClass="PieceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="atV-Qg-VGC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hpx-La-DUI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7lf-m2-ceW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lrl-ik-G0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2548" y="563"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Al-2S-GGu">

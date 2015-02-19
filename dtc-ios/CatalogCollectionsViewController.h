@@ -16,5 +16,6 @@
 
 @property (nonatomic, weak) IBOutlet CatalogCollectionsViewLayout* collectionLayout;
 @property (nonatomic) Catalog* _catalog;
+@property (nonatomic) NSInteger collectionIndex;
 
 @end

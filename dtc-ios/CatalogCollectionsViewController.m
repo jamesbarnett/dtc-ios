@@ -7,6 +7,7 @@
 //
 
 #import "CatalogCollectionsViewController.h"
+#import "PieceViewController.h"
 #import "CatalogParser.h"
 #import "CatalogCollectionsViewLayout.h"
 #import "CollectionViewCell.h"
@@ -21,6 +22,7 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
 
 @implementation CatalogCollectionsViewController
 
+@synthesize collectionIndex;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -55,7 +57,6 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
   return 1;
 }
 
-
 - (NSInteger)collectionView:(UICollectionView*)collectionView
   numberOfItemsInSection:(NSInteger)section {
   return [[self._catalog _collections] count];
@@ -75,6 +76,16 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
 - (void)collectionView:(UICollectionView*)collectionView
   didDeselectItemAtIndexPath:(NSIndexPath*)indexPath {
   NSLog(@"Selected item at %ld", indexPath.row);
+  self.collectionIndex = indexPath.row;
+  [self performSegueWithIdentifier:@"PieceViewSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender {
+  if ([[segue identifier] isEqualToString:@"PieceViewSegue"])
+  {
+    PieceViewController* pieceViewController = [segue destinationViewController];
+    pieceViewController.collection = [self._catalog collectionAt:collectionIndex];
+  }
 }
 
 @end
