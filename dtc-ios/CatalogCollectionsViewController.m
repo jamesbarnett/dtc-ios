@@ -56,7 +56,7 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
 }
 
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView
+- (NSInteger)collectionView:(UICollectionView*)collectionView
   numberOfItemsInSection:(NSInteger)section {
   return [[self._catalog _collections] count];
 }
@@ -68,8 +68,13 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
       forIndexPath:indexPath];
 
   collectionCell.label.text = [self._catalog collectionAt:indexPath.row]._season;
-
+  NSLog(@"creating cells!");
   return collectionCell;
+}
+
+- (void)collectionView:(UICollectionView*)collectionView
+  didDeselectItemAtIndexPath:(NSIndexPath*)indexPath {
+  NSLog(@"Selected item at %ld", indexPath.row);
 }
 
 @end
