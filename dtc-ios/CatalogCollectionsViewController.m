@@ -74,7 +74,7 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
 }
 
 - (void)collectionView:(UICollectionView*)collectionView
-  didDeselectItemAtIndexPath:(NSIndexPath*)indexPath {
+  didSelectItemAtIndexPath:(NSIndexPath*)indexPath {
   NSLog(@"Selected item at %ld", indexPath.row);
   self.collectionIndex = indexPath.row;
   [self performSegueWithIdentifier:@"PieceViewSegue" sender:self];
