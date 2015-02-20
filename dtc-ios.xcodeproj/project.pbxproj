@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		255082E91A973E3000E5096B /* PieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 255082E81A973E3000E5096B /* PieceView.m */; };
 		25B4D77C1A8EB533003A8773 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4D77B1A8EB533003A8773 /* main.m */; };
 		25B4D77F1A8EB533003A8773 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4D77E1A8EB533003A8773 /* AppDelegate.m */; };
 		25B4D7851A8EB533003A8773 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B4D7831A8EB533003A8773 /* Main.storyboard */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		255082E71A973E3000E5096B /* PieceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieceView.h; sourceTree = "<group>"; };
+		255082E81A973E3000E5096B /* PieceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieceView.m; sourceTree = "<group>"; };
 		25B4D7761A8EB533003A8773 /* dtc-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dtc-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B4D77A1A8EB533003A8773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25B4D77B1A8EB533003A8773 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				25DDCA771A943F9F009C03EF /* CatalogCollectionsView.m */,
 				25DDCA7F1A9693E1009C03EF /* PieceViewController.h */,
 				25DDCA801A9693E1009C03EF /* PieceViewController.m */,
+				255082E71A973E3000E5096B /* PieceView.h */,
+				255082E81A973E3000E5096B /* PieceView.m */,
 			);
 			path = "dtc-ios";
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				25B4D77F1A8EB533003A8773 /* AppDelegate.m in Sources */,
 				25B4D77C1A8EB533003A8773 /* main.m in Sources */,
 				25B4D7A71A8EB6CC003A8773 /* Catalog.m in Sources */,
+				255082E91A973E3000E5096B /* PieceView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

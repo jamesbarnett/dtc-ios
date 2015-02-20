@@ -7,6 +7,8 @@
 //
 
 #import "PieceViewController.h"
+#import "PieceView.h"
+#import "Piece.h"
 
 @interface PieceViewController ()
 
@@ -18,7 +20,9 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  // Do any additional setup after loading the view.
+  ((PieceView*)self.view).titleLabel.text = [self.collection pieceAt:0]._title;
+  ((PieceView*)self.view).descriptionLabel.text = [self.collection pieceAt:0]._description;
 }
 
 - (void)didReceiveMemoryWarning {
