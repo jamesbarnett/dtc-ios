@@ -35,21 +35,6 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
 
   CatalogParser* parser = [CatalogParser new];
   self._catalog = [parser parse];
-
-//  self.pieceViewControllers = [[NSMutableArray alloc] init];
-
-//  for (Collection* collection in self._catalog._collections) {
-//    PieceViewController* pvc = [self.storyboard
-//                                instantiateViewControllerWithIdentifier:@"PieceViewController"];
-//    pvc.dataSource = self;
-//    [self.pieceViewControllers addObject:pvc];
-//    
-//    NSMutableArray* viewControllers = [[NSMutableArray alloc] init];
-//
-//    for (Piece* piece in collection._pieces) {
-//      //PageContentViewController* pageContentViewController =
-//    }
-//  }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,14 +54,13 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
   return [self viewControllerAtIndex:index];
 }
 
-
 - (UIViewController*)pageViewController:(UIPageViewController*)pageViewController
       viewControllerAfterViewController:(UIViewController*)viewController {
   NSUInteger index = [(PageContentViewController*)viewController pageIndex];
 
   index++;
 
-  if (index < [self.currentCollection._pieces count]) {
+  if (index > [self.currentCollection._pieces count]) {
     return nil;
   }
 
@@ -84,7 +68,6 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
 }
 
 - (PageContentViewController*)viewControllerAtIndex:(NSUInteger)index {
-  NSLog(@"viewControllerAtIndex called: %ld", index);
   PageContentViewController* pageContentViewController
     = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
 
@@ -143,13 +126,12 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
       forIndexPath:indexPath];
 
   collectionCell.label.text = [self._catalog collectionAt:indexPath.row]._season;
-  NSLog(@"creating cells!");
+
   return collectionCell;
 }
 
 - (void)collectionView:(UICollectionView*)collectionView
   didSelectItemAtIndexPath:(NSIndexPath*)indexPath {
-  NSLog(@"Selected item at %ld", indexPath.row);
   self.collectionIndex = indexPath.row;
   [self performSegueWithIdentifier:@"PieceViewSegue" sender:self];
 }
@@ -159,7 +141,6 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
   {
     PieceViewController* pvc = [segue destinationViewController];
 
-    NSLog(@"prepareForSegue: %@", pvc.description);
     pvc.collection = [self._catalog collectionAt:collectionIndex];
     pvc.dataSource = self;
     self.pieceViewController = pvc;
