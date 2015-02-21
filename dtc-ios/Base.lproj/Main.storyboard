@@ -82,6 +82,7 @@
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="XbL-2P-Hm4" id="bZh-GH-1dY"/>
+                        <outlet property="pieceImageView" destination="Pgl-M3-qPA" id="F6g-RD-ACJ"/>
                         <outlet property="titleLabel" destination="7L1-IW-JJA" id="lmc-Ys-dzr"/>
                     </connections>
                 </viewController>

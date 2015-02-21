@@ -112,7 +112,6 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
 }
 
 - (Collection*) currentCollection {
-  NSLog(@"currentCollection called! %ld", self.collectionIndex);
   return [self._catalog collectionAt:self.collectionIndex];
 }
 
@@ -159,12 +158,14 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
   if ([[segue identifier] isEqualToString:@"PieceViewSegue"])
   {
     PieceViewController* pvc = [segue destinationViewController];
+
     NSLog(@"prepareForSegue: %@", pvc.description);
     pvc.collection = [self._catalog collectionAt:collectionIndex];
     pvc.dataSource = self;
     self.pieceViewController = pvc;
 
     PageContentViewController* pageContentViewController = [self viewControllerAtIndex:0];
+    pageContentViewController.piece = self.currentCollection._pieces[0];
     NSArray* viewControllers = @[pageContentViewController];
     self.pieceViewController.view.frame
       = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);

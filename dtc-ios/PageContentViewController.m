@@ -17,10 +17,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view.
-  NSLog(@"Piece: %@", self.piece.description);
-  ((PieceView*)self.view).titleLabel.text = self.piece._title;
-  ((PieceView*)self.view).descriptionLabel.text = self.piece._description;
+  self.titleLabel.text = self.piece._title;
+  self.descriptionLabel.text = self.piece._description;
 }
 
 - (void)didReceiveMemoryWarning {
