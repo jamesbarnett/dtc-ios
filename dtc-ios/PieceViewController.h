@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Collection.h"
+#import "PageContentViewController.h"
 
-@interface PieceViewController : UIViewController
+@interface PieceViewController : UIPageViewController
 
 @property (nonatomic, weak) Collection* collection;
+// @property (nonatomic, strong) UIPageViewController* pageController;
 
 @end

@@ -35,10 +35,85 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
 
   CatalogParser* parser = [CatalogParser new];
   self._catalog = [parser parse];
+
+//  self.pieceViewControllers = [[NSMutableArray alloc] init];
+
+//  for (Collection* collection in self._catalog._collections) {
+//    PieceViewController* pvc = [self.storyboard
+//                                instantiateViewControllerWithIdentifier:@"PieceViewController"];
+//    pvc.dataSource = self;
+//    [self.pieceViewControllers addObject:pvc];
+//    
+//    NSMutableArray* viewControllers = [[NSMutableArray alloc] init];
+//
+//    for (Piece* piece in collection._pieces) {
+//      //PageContentViewController* pageContentViewController =
+//    }
+//  }
 }
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
+}
+
+- (UIViewController*)pageViewController:(UIPageViewController*)pageViewController
+     viewControllerBeforeViewController:(UIViewController*)viewController {
+  NSUInteger index = [(PageContentViewController*)viewController pageIndex];
+
+  if (index == 0) {
+    return nil;
+  }
+
+  index--;
+
+  return [self viewControllerAtIndex:index];
+}
+
+
+- (UIViewController*)pageViewController:(UIPageViewController*)pageViewController
+      viewControllerAfterViewController:(UIViewController*)viewController {
+  NSUInteger index = [(PageContentViewController*)viewController pageIndex];
+
+  index++;
+
+  if (index < [self.currentCollection._pieces count]) {
+    return nil;
+  }
+
+  return [self viewControllerAtIndex:index];
+}
+
+- (PageContentViewController*)viewControllerAtIndex:(NSUInteger)index {
+  NSLog(@"viewControllerAtIndex called: %ld", index);
+  PageContentViewController* pageContentViewController
+    = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+
+  if (([self.currentCollection._pieces count] == 0)
+      || (index >= [self.currentCollection._pieces count])) {
+    return nil;
+  }
+
+  pageContentViewController.piece = (Piece*)self.currentCollection._pieces[index];
+  pageContentViewController.pageIndex = index;
+
+  return pageContentViewController;
+}
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController*)pageViewController {
+  return [self.currentCollection._pieces count];
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController*)pageViewController {
+  return 0;
+}
+
+- (Collection*) collectionAt:(NSInteger)index {
+  return [self._catalog collectionAt:index];
+}
+
+- (Collection*) currentCollection {
+  NSLog(@"currentCollection called! %ld", self.collectionIndex);
+  return [self._catalog collectionAt:self.collectionIndex];
 }
 
 /*
@@ -83,8 +158,24 @@ static NSString* const CollectionCellIdentifier = @"CollectionCell";
 - (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender {
   if ([[segue identifier] isEqualToString:@"PieceViewSegue"])
   {
-    PieceViewController* pieceViewController = [segue destinationViewController];
-    pieceViewController.collection = [self._catalog collectionAt:collectionIndex];
+    PieceViewController* pvc = [segue destinationViewController];
+    NSLog(@"prepareForSegue: %@", pvc.description);
+    pvc.collection = [self._catalog collectionAt:collectionIndex];
+    pvc.dataSource = self;
+    self.pieceViewController = pvc;
+
+    PageContentViewController* pageContentViewController = [self viewControllerAtIndex:0];
+    NSArray* viewControllers = @[pageContentViewController];
+    self.pieceViewController.view.frame
+      = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
+
+    [self addChildViewController: self.pieceViewController];
+    [self.view addSubview:pvc.view];
+    [self.pieceViewController setViewControllers:viewControllers
+      direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+
+    self.pieceViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width,
+      self.view.frame.size.height - 30);
   }
 }
 

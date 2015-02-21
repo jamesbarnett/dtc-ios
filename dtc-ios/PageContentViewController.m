@@ -1,33 +1,32 @@
 //
-//  PieceViewController.m
+//  PageContentViewController.m
 //  dtc-ios
 //
-//  Created by James Barnett on 2/19/15.
+//  Created by James Barnett on 2/20/15.
 //  Copyright (c) 2015 vivid-abstraction. All rights reserved.
 //
 
-#import "PieceViewController.h"
+#import "PageContentViewController.h"
 #import "PieceView.h"
-#import "Piece.h"
 
-@interface PieceViewController ()
+@interface PageContentViewController ()
 
 @end
 
-@implementation PieceViewController
-
-@synthesize collection;
+@implementation PageContentViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view.
+  NSLog(@"Piece: %@", self.piece.description);
+  ((PieceView*)self.view).titleLabel.text = self.piece._title;
+  ((PieceView*)self.view).descriptionLabel.text = self.piece._description;
 }
 
 - (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
+    [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 /*
 #pragma mark - Navigation

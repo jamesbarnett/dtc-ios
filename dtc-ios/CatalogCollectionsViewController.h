@@ -8,14 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PieceViewController.h"
 #import "CatalogCollectionsViewLayout.h"
 #import "Catalog.h"
 
 @interface CatalogCollectionsViewController : UICollectionViewController <UICollectionViewDataSource,
-                                              UICollectionViewDelegate>
+                                              UICollectionViewDelegate,
+                                              UIPageViewControllerDataSource>
 
 @property (nonatomic, weak) IBOutlet CatalogCollectionsViewLayout* collectionLayout;
 @property (nonatomic) Catalog* _catalog;
 @property (nonatomic) NSInteger collectionIndex;
-
+@property (nonatomic, strong) PieceViewController* pieceViewController;
+//@property (nonatomic, strong) NSMutableArray* pieceViewControllers;
 @end
