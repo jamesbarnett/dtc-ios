@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cBN-zg-woC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Catalog Collections View Controller-->
@@ -62,16 +63,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgl-M3-qPA">
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pgl-M3-qPA">
                                 <rect key="frame" x="-30" y="-96" width="614" height="546"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="titleLabel" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7L1-IW-JJA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="titleLabel" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7L1-IW-JJA">
                                 <rect key="frame" x="0.0" y="458" width="584" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="descriptionLabel" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbL-2P-Hm4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="descriptionLabel" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbL-2P-Hm4">
                                 <rect key="frame" x="0.0" y="487" width="584" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -79,6 +80,19 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j6R-TJ-UBH" firstAttribute="top" secondItem="Pgl-M3-qPA" secondAttribute="bottom" constant="150" id="1KH-tS-K53"/>
+                            <constraint firstItem="7L1-IW-JJA" firstAttribute="trailing" secondItem="XbL-2P-Hm4" secondAttribute="trailing" id="4oT-4j-aUG"/>
+                            <constraint firstItem="Pgl-M3-qPA" firstAttribute="top" secondItem="Oyb-JL-Z1P" secondAttribute="bottom" constant="-116" id="5RJ-zX-TOJ"/>
+                            <constraint firstItem="Pgl-M3-qPA" firstAttribute="top" secondItem="Oyb-JL-Z1P" secondAttribute="bottom" constant="-116" id="6tQ-nc-rgF"/>
+                            <constraint firstItem="7L1-IW-JJA" firstAttribute="trailing" secondItem="Pgl-M3-qPA" secondAttribute="trailing" id="8zD-6x-zQd"/>
+                            <constraint firstItem="j6R-TJ-UBH" firstAttribute="top" secondItem="7L1-IW-JJA" secondAttribute="bottom" constant="121" id="YLf-Lr-wPO"/>
+                            <constraint firstItem="7L1-IW-JJA" firstAttribute="leading" secondItem="ZdC-ba-goE" secondAttribute="leading" id="e5g-Ok-i2t"/>
+                            <constraint firstItem="j6R-TJ-UBH" firstAttribute="top" secondItem="XbL-2P-Hm4" secondAttribute="bottom" constant="92" id="g5i-0i-cDc"/>
+                            <constraint firstItem="Pgl-M3-qPA" firstAttribute="trailing" secondItem="ZdC-ba-goE" secondAttribute="trailingMargin" id="mWT-wf-Ds6"/>
+                            <constraint firstItem="7L1-IW-JJA" firstAttribute="leading" secondItem="XbL-2P-Hm4" secondAttribute="leading" id="rso-AZ-WoA"/>
+                            <constraint firstItem="Pgl-M3-qPA" firstAttribute="leading" secondItem="ZdC-ba-goE" secondAttribute="leadingMargin" constant="-46" id="xWv-aZ-kSV"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="XbL-2P-Hm4" id="bZh-GH-1dY"/>
