@@ -19,6 +19,7 @@
   [super viewDidLoad];
   self.titleLabel.text = self.piece._title;
   self.descriptionLabel.text = self.piece._description;
+  self.pieceImageView.image = [UIImage imageNamed: @"asset"];
 }
 
 - (void)didReceiveMemoryWarning {

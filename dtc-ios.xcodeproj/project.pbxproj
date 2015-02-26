@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		254696F91A9EC240004D564D /* asset-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 254696F41A9EC240004D564D /* asset-568h@2x.png */; };
+		254696FA1A9EC240004D564D /* asset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 254696F51A9EC240004D564D /* asset@2x.png */; };
+		254696FB1A9EC240004D564D /* asset@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 254696F61A9EC240004D564D /* asset@2x~ipad.png */; };
+		254696FC1A9EC240004D564D /* asset@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 254696F71A9EC240004D564D /* asset@3x.png */; };
+		254696FD1A9EC240004D564D /* asset~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 254696F81A9EC240004D564D /* asset~ipad.png */; };
 		255082E91A973E3000E5096B /* PieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 255082E81A973E3000E5096B /* PieceView.m */; };
 		255082EC1A97C86800E5096B /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 255082EB1A97C86800E5096B /* PageContentViewController.m */; };
 		25B4D77C1A8EB533003A8773 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4D77B1A8EB533003A8773 /* main.m */; };
@@ -38,6 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		254696F41A9EC240004D564D /* asset-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "asset-568h@2x.png"; path = "../../../Downloads/asset-568h@2x.png"; sourceTree = "<group>"; };
+		254696F51A9EC240004D564D /* asset@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "asset@2x.png"; path = "../../../Downloads/asset@2x.png"; sourceTree = "<group>"; };
+		254696F61A9EC240004D564D /* asset@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "asset@2x~ipad.png"; path = "../../../Downloads/asset@2x~ipad.png"; sourceTree = "<group>"; };
+		254696F71A9EC240004D564D /* asset@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "asset@3x.png"; path = "../../../Downloads/asset@3x.png"; sourceTree = "<group>"; };
+		254696F81A9EC240004D564D /* asset~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "asset~ipad.png"; path = "../../../Downloads/asset~ipad.png"; sourceTree = "<group>"; };
 		255082E71A973E3000E5096B /* PieceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieceView.h; sourceTree = "<group>"; };
 		255082E81A973E3000E5096B /* PieceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieceView.m; sourceTree = "<group>"; };
 		255082EA1A97C86800E5096B /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
@@ -127,6 +137,11 @@
 				25B4D7AA1A8EE609003A8773 /* CatalogParser.h */,
 				25B4D7831A8EB533003A8773 /* Main.storyboard */,
 				25B4D7861A8EB533003A8773 /* Images.xcassets */,
+				254696F41A9EC240004D564D /* asset-568h@2x.png */,
+				254696F51A9EC240004D564D /* asset@2x.png */,
+				254696F61A9EC240004D564D /* asset@2x~ipad.png */,
+				254696F71A9EC240004D564D /* asset@3x.png */,
+				254696F81A9EC240004D564D /* asset~ipad.png */,
 				25B4D7881A8EB533003A8773 /* LaunchScreen.xib */,
 				25B4D7791A8EB533003A8773 /* Supporting Files */,
 				25B4D7AB1A8EE609003A8773 /* CatalogParser.m */,
@@ -252,8 +267,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				254696FD1A9EC240004D564D /* asset~ipad.png in Resources */,
 				25B4D7851A8EB533003A8773 /* Main.storyboard in Resources */,
+				254696FA1A9EC240004D564D /* asset@2x.png in Resources */,
+				254696FC1A9EC240004D564D /* asset@3x.png in Resources */,
 				25B4D78A1A8EB533003A8773 /* LaunchScreen.xib in Resources */,
+				254696FB1A9EC240004D564D /* asset@2x~ipad.png in Resources */,
+				254696F91A9EC240004D564D /* asset-568h@2x.png in Resources */,
 				25B4D7871A8EB533003A8773 /* Images.xcassets in Resources */,
 				25B4D7A61A8EB6CC003A8773 /* catalog.json in Resources */,
 			);

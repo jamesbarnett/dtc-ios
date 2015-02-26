@@ -4,8 +4,8 @@ require 'dimensions'
 
 devices = {
   iphone5: { res: [1136, 640], suffix: "-568h@2x" },
-  iphone6: { res: [1334, 750] },
-  iphone6plus: { res: [2208, 1242] },
+  iphone6: { res: [1334, 750], suffix: "@2x" },
+  iphone6plus: { res: [2208, 1242], suffix: "@3x" },
   ipad: { res: [1024, 768], suffix: "~ipad" },
   ipad_retina: { res: [2048, 1536], suffix: "@2x~ipad"}
 }
@@ -31,21 +31,21 @@ devices.each do |k, v|
 end
 
 puts "4mp+ ====="
-Dir["#{ENV["HOME"]}/Downloads/*_4mp.jpg"].each do |file|
+Dir["#{ENV["HOME"]}/Downloads/*_4mp.png"].each do |file|
   report_image_info(file)
 end
 
 puts
 
 puts "4:3 ====="
-Dir["#{ENV["HOME"]}/Downloads/*4-3_full.jpg"].each do |file|
+Dir["#{ENV["HOME"]}/Downloads/*4-3_full.png"].each do |file|
   report_image_info(file)
 end
 
 puts
 
 puts "16:9 ====="
-Dir["#{ENV["HOME"]}/Downloads/*16-9_full.jpg"].each do |file|
+Dir["#{ENV["HOME"]}/Downloads/*16-9_full.png"].each do |file|
   report_image_info(file)
 end
 
@@ -59,8 +59,8 @@ require 'mini_magick'
 
 def out_filename(input, suffix)
   filename = input.dup
-  filename.gsub! /_4-3_full\.jpg/, "#{suffix}.png"
-  filename.gsub! /_16-9_full\.jpg/, "#{suffix}.png"
+  filename.gsub! /_4-3_full\.png/, "#{suffix}.png"
+  filename.gsub! /_16-9_full\.png/, "#{suffix}.png"
   filename
 end
 
@@ -71,7 +71,7 @@ def resize_image(input, out, device)
   image.write out_filename(input, device[:suffix])
 end
 
-Dir["#{ENV["HOME"]}/Downloads/*4-3_full.jpg"].each do |file|
+Dir["#{ENV["HOME"]}/Downloads/*4-3_full.png"].each do |file|
   ar43.each do |device, info|
     puts "4:3 device: #{device}"
     puts "input file: #{file}, output file: #{file.gsub("_4-3_full", info[:suffix])}" if info[:suffix]
@@ -79,7 +79,7 @@ Dir["#{ENV["HOME"]}/Downloads/*4-3_full.jpg"].each do |file|
   end
 end
 
-Dir["#{ENV["HOME"]}/Downloads/*16-9_full.jpg"].each do |file|
+Dir["#{ENV["HOME"]}/Downloads/*16-9_full.png"].each do |file|
   ar169.each do |device, info|
     puts "16:9 device: #{device}"
     puts "input file: #{file}, output file: #{file.gsub("_16-9_full", info[:suffix])}" if info[:suffix]
