@@ -15,6 +15,7 @@
 
   piece._title = [json objectForKey:@"title"];
   piece._description = [json objectForKey:@"description"];
+  NSLog(@"Piece#fromJSON.image: %@", [json objectForKey:@"image"]);
   piece._image = [json objectForKey:@"image"];
 
   return piece;
