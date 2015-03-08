@@ -71,7 +71,7 @@ static NSString* const CatalogCollectionsCellKind = @"CollectionCell";
 
   CGFloat originX = self.itemInsets.left;
   CGFloat originY = self.itemInsets.top +
-    ((indexPath.item - 1)
+    ((indexPath.item)
       * (padding
          + self.itemSize.height
          + self.itemInsets.bottom));
@@ -103,7 +103,6 @@ static NSString* const CatalogCollectionsCellKind = @"CollectionCell";
 
 - (CGSize)collectionViewContentSize {
   NSInteger rowCount = [self.collectionView numberOfSections] / self.numberOfColumns;
-
   // make sure we count another row if one is only partially filled
   if ([self.collectionView numberOfSections] % self.numberOfColumns) rowCount++;
 
